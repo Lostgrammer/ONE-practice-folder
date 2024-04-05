@@ -29,8 +29,9 @@ public class Main {
         Scanner input = new Scanner(System.in);
         System.out.println("Ingrese el valor de los grados celsius para convertirlos a Fahrenheit");
         double degreesValue = input.nextDouble();
-        int fahrenheitDegrees = (int) ((degreesValue * 1.8)+32);
-        System.out.println("El valor de "+degreesValue+" Celsius en grados Farenheit es: "+fahrenheitDegrees+" F");
+        double fahrenheitConvertion = (degreesValue * 1.8)+32;
+        int fahrenheitConvertionInt = (int) fahrenheitConvertion;
+        System.out.println("El valor de "+degreesValue+" Celsius en grados Farenheit es: "+fahrenheitConvertionInt+" F");
 
     }
 }
