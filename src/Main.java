@@ -7,20 +7,21 @@ public class Main {
         String nameMovie = "Bolt";
         int launchDate = 1999;
         double rateMovie = (3.2 + 5 + 4.2) / 3;
+        //casting
+        int rateMovieInt = (int) rateMovie;
         System.out.println ("Nombre pelicula: " + nameMovie);
         System.out.println ("Fecha de lamzamiento: " + launchDate);
-        System.out.println ("Valoracion: " + rateMovie);
+        System.out.println ("Valoracion: " + rateMovieInt);
         System.out.println ("""
+                              SINOPSIS
                               Se trata de un perro con superpoderes 
                               pero solo dentro de las camaras en los estudios de grabacion 
                               ya que en la vida real el es un simple perro
                                 """);
-        System.out.println(String.format("Nombre de la pelicula: %s, fecha de lanzamiento %d"));
         /*
         * Este es un comentario
         * de muchas lineas
         * */
-        String contrasena= "12345";
 
     }
 }
