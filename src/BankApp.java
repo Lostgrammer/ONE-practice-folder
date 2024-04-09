@@ -19,44 +19,77 @@ public class BankApp {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
+        String menu = """
+                Que operacion quiere realizar?"
+                1. Consultar su saldo
+                2. Retirar
+                3. Depositar
+                9. Salir
+                """;
         String username = "";
-        double initialBalance = 1599.00;
+        double balance = 1599.00;
         int chosenOption = 0;
-        double withdrawnMoney = 0;
+        int withdrawnMoney = 0;
         double depositedMoney = 0;
-        double newBalance = 0;
+        int limitNumber = 0;
 
         //init app
         username = "Tony Stark";
         System.out.println("Bienvenido Sr(" + username + ")");
         do {
-            System.out.println("Que operacion quiere realizar?\n" +
-                    "1. Consultar su saldo\n" +
-                    "2. Retirar\n" +
-                    "3. Depositar\n" +
-                    "9. Salir\n");
+            System.out.println(menu);
             chosenOption = input.nextInt();
             if (chosenOption == 1){
-                newBalance = initialBalance;
-                System.out.println("Su saldo actual es de $" + newBalance);
+                System.out.println("=========================\n" +
+                                "Su saldo actual es de $" + balance + "\n" +
+                                "=========================");
             } else if (chosenOption == 2) {
                 System.out.println("Indique su monto a retirar:");
+                withdrawnMoney = input.nextInt();
+
                 //if si el monto ingresado es superior
-//                if (){
-//
-//                }
-            } else if (chosenOption == 3) {
+                if (withdrawnMoney > balance){
+                    System.out.println("=========================\n" +
+                            "Saldo insuficiente.\n" +
+                            "=========================");
+                }else if (withdrawnMoney <= limitNumber){
+                    System.out.println("=========================\n" +
+                                    "Monto invalido\n" +
+                                    "=========================");
+                }else{
+                    balance -= withdrawnMoney;
+                    System.out.println("=========================\n" +
+                            "Recibiendo: $" + withdrawnMoney + "\n" +
+                            "Saldo restante: $" + balance + "\n" +
+                            "=========================");
+                }
+            }else if (chosenOption == 3) {
+                System.out.println("=========================\n" +
+                                "Indique su monto a depositar:\n" +
+                                "=========================");
+                depositedMoney = input.nextInt();
+                if (depositedMoney <= limitNumber){
+                    System.out.println("=========================\n" +
+                            "Monto invalido\n" +
+                            "=========================");
+                }else{
+                    balance += depositedMoney;
+                    System.out.println("=========================\n" +
+                            "Depositando: $" + depositedMoney + "\n" +
+                            "Saldo actual: $" + balance + "\n" +
+                            "=========================");
+                }
                 System.out.println("3");
             }else if (chosenOption == 9) {
-                System.out.println("Que tenga buen dia!");
+                System.out.println("=========================\n" +
+                                "Que tenga buen dia!\n" +
+                                "=========================");
             }else {
                 System.out.println("=========================\n" +
                         "Seleecione una opcion valida\n" +
                         "=========================");
             }
         } while (chosenOption != 9);
-
-        System.out.println();
 
     }
 }
