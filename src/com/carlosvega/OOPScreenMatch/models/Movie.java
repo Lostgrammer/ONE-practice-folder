@@ -1,13 +1,30 @@
-package OOPScreenMatch;
+package com.carlosvega.OOPScreenMatch.models;
 
 
 public class Movie {
     //atributos
-    String name;
-    int launchYear;
-    int duration;
+    private String name;
+    private int launchYear;
+    private int duration;
     private double totalRating;
     private int totalEvaluations;
+
+    //getters y setters
+    public double getTotalRating() {
+        return totalRating;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
+
+    public void setLaunchYear(int launchYear) {
+        this.launchYear = launchYear;
+    }
 
     //metodos
     public void showData(){
@@ -15,7 +32,6 @@ public class Movie {
                 "año de lanzamiento: " + launchYear + "\n" +
                 "duracion: " + duration);
     }
-
     public void rate(double rateValue){
         System.out.println("Tu calificacion a esta pelicula: " + rateValue + "/10\n");
         totalRating += rateValue;
@@ -26,19 +42,4 @@ public class Movie {
         return (totalRating) / totalEvaluations;
     }
 
-    public int getTotalEvaluations() {
-        return totalEvaluations;
-    }
-
-    public void setTotalEvaluations(int totalEvaluations) {
-        this.totalEvaluations = totalEvaluations;
-    }
-
-    public double getTotalRating() {
-        return totalRating;
-    }
-
-    public void setTotalRating(double totalRating) {
-        this.totalRating = totalRating;
-    }
 }
