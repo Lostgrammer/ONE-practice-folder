@@ -14,5 +14,9 @@ public class MainScreenMatch {
         peli1.rate(10);
         System.out.println("La media de la pelicula es: " + peli1.calculateRatingMedia() + " /10");
         System.out.println("getter de peli1:"+ peli1.getTotalRating());
+
+        Series serie1 = new Series();
+        serie1.setQuantitySeasons(5);
+        serie1.showData();
     }
 }
