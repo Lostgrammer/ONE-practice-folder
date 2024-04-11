@@ -16,6 +16,7 @@ public class MainScreenMatch {
         System.out.println("getter de peli1:"+ peli1.getTotalRating());
 
         Series serie1 = new Series();
+        serie1.name = "Breaking Bad";
         serie1.setQuantitySeasons(5);
         serie1.showData();
     }

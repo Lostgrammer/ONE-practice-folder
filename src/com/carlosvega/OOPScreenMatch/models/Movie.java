@@ -13,8 +13,6 @@ public class Movie extends Titulo{
         this.director = director;
     }
 
-
-
     //metodos
 
 

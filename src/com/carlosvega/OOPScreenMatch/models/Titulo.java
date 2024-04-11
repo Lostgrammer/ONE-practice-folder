@@ -8,6 +8,7 @@ public class Titulo {
     private int duration;
     private double totalRating;
     private int totalEvaluations;
+    private double minutesLenght;
 
     //getters y setters
     public double getTotalRating() {
@@ -24,6 +25,13 @@ public class Titulo {
 
     public void setLaunchYear(int launchYear) {
         this.launchYear = launchYear;
+    }
+
+    public double getMinutesLenght() {
+        return minutesLenght;
+    }
+    public void setMinutesLenght(double minutesLenght) {
+        this.minutesLenght = minutesLenght;
     }
 
     //metodos
