@@ -1,6 +1,6 @@
 package com.carlosvega.OOPScreenMatch.models;
 
-public class Series extends Titulo{
+public class Serie extends Title {
     private int quantitySeasons;
 
     public int getQuantitySeasons() {
@@ -14,5 +14,13 @@ public class Series extends Titulo{
     public void showData(){
         System.out.println("Nombre de la serie: " + name + "\n" +
                 "Cantidad de temporadas: " + quantitySeasons);
+    }
+
+    /*
+    * tienes que calcular y mostrar la calificacion por temporada y su total*/
+    @Override
+    public void rate(double rateValue) {
+
+        totalRating += rateValue;
     }
 }

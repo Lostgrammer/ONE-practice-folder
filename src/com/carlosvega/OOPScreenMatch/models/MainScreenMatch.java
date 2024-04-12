@@ -8,15 +8,16 @@ public class MainScreenMatch {
         Movie peli1 = new Movie();
         peli1.setName("Planeta de los Simios");
         peli1.setLaunchYear(2011);
-        peli1.setDuration(120);
+        peli1.setMinutesLenght(120);
+        peli1.setDirector("Rupert Wyatt");
         peli1.showData();
         peli1.rate(5.7);
         peli1.rate(10);
-        System.out.println("La media de la pelicula es: " + peli1.calculateRatingMedia() + " /10");
-        System.out.println("getter de peli1:"+ peli1.getTotalRating());
+        System.out.println("La media de la pelicula " + peli1.name + " es: " + peli1.calculateRatingMedia() + " /10\n");
 
-        Series serie1 = new Series();
+        Serie serie1 = new Serie();
         serie1.name = "Breaking Bad";
+        serie1.setLaunchYear(2008);
         serie1.setQuantitySeasons(5);
         serie1.showData();
     }
