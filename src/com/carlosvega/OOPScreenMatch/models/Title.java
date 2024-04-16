@@ -3,17 +3,25 @@ package com.carlosvega.OOPScreenMatch.models;
 public class Title {
 
     //atributos
-    protected String name;
-    protected int launchYear;
-    protected double totalRating;
-    protected int totalEvaluations;
+    private String name;
+    private int launchYear;
+    private double totalRating;
+    private int totalEvaluations;
 
     //getters y setters
     public double getTotalRating() {
         return totalRating;
     }
+
+    public String getName() {
+        return name;
+    }
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getLaunchYear() {
+        return launchYear;
     }
     public void setLaunchYear(int launchYear) {
         this.launchYear = launchYear;

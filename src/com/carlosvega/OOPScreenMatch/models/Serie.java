@@ -13,18 +13,18 @@ public class Serie extends Title {
     //metodos
     @Override
     public void showData() {
-        System.out.println("Nombre de la serie: " + name + "\n" +
-                "Año de lanzamiento: " + launchYear + "\n" +
+        System.out.println("Nombre de la serie: " + getName() + "\n" +
+                "Año de lanzamiento: " + getLaunchYear() + "\n" +
                 "Cantidad de temporadas: " + quantitySeasons);
     }
 
     /*
     * tienes que calcular y mostrar la calificacion por temporada y su total*/
-    @Override
-    public void rate(double rateValue) {
-
-        totalRating += rateValue;
-    }
+//    @Override
+//    public void rate(double rateValue) {
+//
+//        totalRating += rateValue;
+//    }
 
 
 }

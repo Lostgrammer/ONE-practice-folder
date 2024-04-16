@@ -16,7 +16,7 @@ public class MainScreenMatch {
 //        System.out.println("La media de la pelicula " + peli1.name + " es: " + peli1.calculateRatingMedia() + " /10\n");
 
         Serie serie1 = new Serie();
-        serie1.name = "Breaking Bad";
+        serie1.setName("Breaking Bad");
         serie1.setLaunchYear(2008);
         serie1.setQuantitySeasons(5);
         serie1.showData();
