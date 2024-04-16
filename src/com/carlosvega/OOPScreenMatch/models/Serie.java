@@ -1,13 +1,21 @@
 package com.carlosvega.OOPScreenMatch.models;
 
 public class Serie extends Title {
-    private int quantitySeasons;
+    private int episodesPerSeason;
+    private int minutesPerEpisode;
 
-    public int getQuantitySeasons() {
-        return quantitySeasons;
+    public int getEpisodesPerSeason() {
+        return episodesPerSeason;
     }
-    public void setQuantitySeasons(int quantitySeasons) {
-        this.quantitySeasons = quantitySeasons;
+    public void setEpisodesPerSeason(int episodesPerSeason) {
+        this.episodesPerSeason = episodesPerSeason;
+    }
+
+    public int getMinutesPerEpisode() {
+        return minutesPerEpisode;
+    }
+    public void setMinutesPerEpisode(int minutesPerEpisode) {
+        this.minutesPerEpisode = minutesPerEpisode;
     }
 
     //metodos
@@ -15,7 +23,7 @@ public class Serie extends Title {
     public void showData() {
         System.out.println("Nombre de la serie: " + getName() + "\n" +
                 "Año de lanzamiento: " + getLaunchYear() + "\n" +
-                "Cantidad de temporadas: " + quantitySeasons);
+                "Episodios por temporada: " + episodesPerSeason);
     }
 
     /*
