@@ -1,8 +1,16 @@
 package com.carlosvega.OOPScreenMatch.models;
 
 public class Serie extends Title {
+    private int seasonQuantity;
     private int episodesPerSeason;
     private int minutesPerEpisode;
+
+    public int getSeasonQuantity() {
+        return seasonQuantity;
+    }
+    public void setSeasonQuantity(int seasonQuantity) {
+        this.seasonQuantity = seasonQuantity;
+    }
 
     public int getEpisodesPerSeason() {
         return episodesPerSeason;
