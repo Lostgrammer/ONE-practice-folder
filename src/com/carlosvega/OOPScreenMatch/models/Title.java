@@ -5,8 +5,11 @@ public class Title {
     //atributos
     private String name;
     private int launchYear;
+    private boolean planIncluded;
+
     private double totalRating;
     private int totalEvaluations;
+    private double minutesLenght;
 
     //getters y setters
     public double getTotalRating() {
@@ -27,6 +30,18 @@ public class Title {
         this.launchYear = launchYear;
     }
 
+    public boolean isPlanIncluded() {
+        return planIncluded;
+    }
+    public void setPlanIncluded(boolean planIncluded) {
+        this.planIncluded = planIncluded;
+    }
+    public double getMinutesLenght() {
+        return minutesLenght;
+    }
+    public void setMinutesLenght(double minutesLenght) {
+        this.minutesLenght = minutesLenght;
+    }
     //metodos
     public void showData(){
         System.out.println("Nombre del titulo: "+ name + "\n" +
