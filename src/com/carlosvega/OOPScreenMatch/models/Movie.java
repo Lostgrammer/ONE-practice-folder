@@ -23,6 +23,8 @@ public class Movie extends Title {
     //metodos
     @Override
     public void showData() {
-        super.showData();
+        System.out.println("Nombre de la pelicula: " + name + "\n" +
+                "Año de lanzamiento: " + launchYear + "\n" +
+                "Director: " + director + "\n");
     }
 }

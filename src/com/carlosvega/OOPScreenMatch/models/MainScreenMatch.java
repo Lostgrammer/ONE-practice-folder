@@ -11,9 +11,9 @@ public class MainScreenMatch {
         peli1.setMinutesLenght(120);
         peli1.setDirector("Rupert Wyatt");
         peli1.showData();
-        peli1.rate(5.7);
-        peli1.rate(10);
-        System.out.println("La media de la pelicula " + peli1.name + " es: " + peli1.calculateRatingMedia() + " /10\n");
+//        peli1.rate(5.7);
+//        peli1.rate(10);
+//        System.out.println("La media de la pelicula " + peli1.name + " es: " + peli1.calculateRatingMedia() + " /10\n");
 
         Serie serie1 = new Serie();
         serie1.name = "Breaking Bad";
