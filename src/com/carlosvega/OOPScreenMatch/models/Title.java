@@ -4,7 +4,7 @@ public class Title {
 
     //atributos
     protected String name;
-    private int launchYear;
+    protected int launchYear;
     protected double totalRating;
     protected int totalEvaluations;
 
@@ -21,7 +21,7 @@ public class Title {
 
     //metodos
     public void showData(){
-        System.out.println("Nombre de pelicula: "+ name + "\n" +
+        System.out.println("Nombre del titulo: "+ name + "\n" +
                 "año de lanzamiento: " + launchYear + "\n");
     }
     public void rate(double rateValue){

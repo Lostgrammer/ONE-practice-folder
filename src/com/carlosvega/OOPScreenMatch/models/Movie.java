@@ -21,6 +21,8 @@ public class Movie extends Title {
     }
 
     //metodos
-
-
+    @Override
+    public void showData() {
+        super.showData();
+    }
 }

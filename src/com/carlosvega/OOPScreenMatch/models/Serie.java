@@ -11,8 +11,10 @@ public class Serie extends Title {
     }
 
     //metodos
-    public void showData(){
+    @Override
+    public void showData() {
         System.out.println("Nombre de la serie: " + name + "\n" +
+                "Año de lanzamiento: " + launchYear + "\n" +
                 "Cantidad de temporadas: " + quantitySeasons);
     }
 
@@ -23,4 +25,6 @@ public class Serie extends Title {
 
         totalRating += rateValue;
     }
+
+
 }
