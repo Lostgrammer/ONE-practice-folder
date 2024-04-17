@@ -56,5 +56,4 @@ public class Title {
     public double calculateRatingMedia (){
         return (totalRating) / totalEvaluations;
     }
-
 }
