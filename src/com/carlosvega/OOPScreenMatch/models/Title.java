@@ -9,7 +9,7 @@ public class Title {
 
     private double totalRating;
     private int totalEvaluations;
-    private double minutesLenght;
+    private int minutesLenght;
 
     //getters y setters
     public double getTotalRating() {
