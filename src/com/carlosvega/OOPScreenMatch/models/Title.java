@@ -45,13 +45,13 @@ public class Title {
     //metodos
     public void showData(){
         System.out.println("Nombre del titulo: "+ name + "\n" +
-                "año de lanzamiento: " + launchYear + "\n");
+                "año de lanzamiento: " + launchYear + "\n" +
+                "Duracion en minutos: " + getMinutesLenght() + "\n");
     }
-    public void rate(double rateValue){
+    public void rate(double rateValue){ //calcular la suma de todas las calificaciones
         System.out.println("Tu calificacion a esta pelicula: " + rateValue + "/10\n");
         totalRating += rateValue;
         totalEvaluations++;
-
     }
     public double calculateRatingMedia (){
         return (totalRating) / totalEvaluations;

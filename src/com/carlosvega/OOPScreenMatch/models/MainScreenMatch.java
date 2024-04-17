@@ -18,8 +18,10 @@ public class MainScreenMatch {
         Serie serie1 = new Serie();
         serie1.setName("Breaking Bad");
         serie1.setLaunchYear(2008);
-        serie1.setEpisodesPerSeason(8);
-        serie1.setMinutesPerEpisode(40);
+        serie1.setSeasonQuantity(5);
+        serie1.setEpisodesPerSeason(9);
+        serie1.setMinutesPerEpisode(50);
         serie1.showData();
+        //System.out.println("Tiempo promedio necesario para ver esta serie: " + serie1.getMinutesLenght() + "min");
     }
 }

@@ -27,12 +27,19 @@ public class Serie extends Title {
     }
 
     //metodos
+
+
     @Override
-    public void showData() {
-        System.out.println("Nombre de la serie: " + getName() + "\n" +
-                "Año de lanzamiento: " + getLaunchYear() + "\n" +
-                "Episodios por temporada: " + episodesPerSeason);
+    public double getMinutesLenght() {
+        return seasonQuantity * episodesPerSeason * minutesPerEpisode;
     }
+
+//    @Override
+//    public void showData() {
+//        System.out.println("Nombre de la serie: " + getName() + "\n" +
+//                "Año de lanzamiento: " + getLaunchYear() + "\n" +
+//                "Episodios por temporada: " + episodesPerSeason);
+//    }
 
     /*
     * tienes que calcular y mostrar la calificacion por temporada y su total*/
