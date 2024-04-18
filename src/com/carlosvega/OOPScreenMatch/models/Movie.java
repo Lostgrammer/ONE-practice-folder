@@ -1,7 +1,9 @@
 package com.carlosvega.OOPScreenMatch.models;
 
 
-public class Movie extends Title {
+import com.carlosvega.OOPScreenMatch.calculations.Ranking;
+
+public class Movie extends Title implements Ranking {
     //atributos
     private String director;
 
@@ -11,6 +13,11 @@ public class Movie extends Title {
     }
     public void setDirector(String director) {
         this.director = director;
+    }
+
+    @Override
+    public int getRamking() {
+        return (int) calculateRatingMedia();
     }
 
     //metodos
