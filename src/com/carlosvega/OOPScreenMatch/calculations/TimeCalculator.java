@@ -5,7 +5,12 @@ import com.carlosvega.OOPScreenMatch.models.Movie;
 public class TimeCalculator {
     private int totalTime;
 
-    public void include(Movie movie){
+    public int include(Movie movie){
         totalTime += movie.getMinutesLenght();
+        return totalTime;
     }
+
+//    public void showTotalTime(){
+//
+//    }
 }

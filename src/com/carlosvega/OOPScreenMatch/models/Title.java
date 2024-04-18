@@ -36,10 +36,10 @@ public class Title {
     public void setPlanIncluded(boolean planIncluded) {
         this.planIncluded = planIncluded;
     }
-    public double getMinutesLenght() {
+    public int getMinutesLenght() {
         return minutesLenght;
     }
-    public void setMinutesLenght(double minutesLenght) {
+    public void setMinutesLenght(int minutesLenght) {
         this.minutesLenght = minutesLenght;
     }
     //metodos

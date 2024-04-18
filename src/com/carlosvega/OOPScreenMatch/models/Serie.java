@@ -30,7 +30,7 @@ public class Serie extends Title {
 
 
     @Override
-    public double getMinutesLenght() {
+    public int getMinutesLenght() {
         return seasonQuantity * episodesPerSeason * minutesPerEpisode;
     }
 

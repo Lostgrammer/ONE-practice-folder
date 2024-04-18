@@ -1,6 +1,7 @@
 package com.carlosvega.OOPScreenMatch.models;
 
 
+import com.carlosvega.OOPScreenMatch.calculations.TimeCalculator;
 
 public class MainScreenMatch {
     public static void main(String[] args) {
@@ -23,5 +24,10 @@ public class MainScreenMatch {
         serie1.setMinutesPerEpisode(50);
         serie1.showData();
         //System.out.println("Tiempo promedio necesario para ver esta serie: " + serie1.getMinutesLenght() + "min");
+
+        //calculator
+        TimeCalculator timeCalculator = new TimeCalculator();
+
+        System.out.println("Tiempo necesario para ver todo el contenido: " + timeCalculator.include(peli1) + " min");
     }
 }
