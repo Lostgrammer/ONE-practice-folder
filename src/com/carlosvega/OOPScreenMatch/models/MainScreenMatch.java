@@ -23,11 +23,19 @@ public class MainScreenMatch {
         serie1.setEpisodesPerSeason(9);
         serie1.setMinutesPerEpisode(50);
         serie1.showData();
-        //System.out.println("Tiempo promedio necesario para ver esta serie: " + serie1.getMinutesLenght() + "min");
+
+        Movie peli2 = new Movie();
+        peli2.setName("Kung Fu Panda");
+        peli2.setLaunchYear(2008);
+        peli2.setMinutesLenght(90);
+        peli2.setDirector("Mark Osborne");
+        peli2.showData();
 
         //calculator
         TimeCalculator timeCalculator = new TimeCalculator();
+        timeCalculator.include(peli1);
+        timeCalculator.include(serie1);
 
-        System.out.println("Tiempo necesario para ver todo el contenido: " + timeCalculator.include(peli1) + " min");
+        System.out.println("Tiempo necesario para ver todo el contenido: " + timeCalculator.getTotalTime() + " min");
     }
 }
