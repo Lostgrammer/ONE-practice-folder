@@ -39,7 +39,16 @@ public class Audio {
         this.launchDate = launchDate;
     }
     public void liked(){
+        System.out.println("Marcado como me gusta");
     }
     public void play(){
+        System.out.println("Reproduciendo");
+        AmountPlays += 1;
+        System.out.println("Cantidad de reproducciones: "+getAmountPlays());
+    }
+
+    //methods
+    public void showData(){
+        System.out.println("hola");
     }
 }
