@@ -16,4 +16,13 @@ public class Song extends Audio{
     public void setRecords(String records) {
         this.records = records;
     }
+
+    //methods
+
+    @Override
+    public void showData() {
+        System.out.println("Nombre de la cancion:" + getName() + "\n" +
+                "");
+        super.showData();
+    }
 }

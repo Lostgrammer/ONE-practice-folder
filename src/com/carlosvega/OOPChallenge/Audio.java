@@ -44,11 +44,12 @@ public class Audio {
     public void play(){
         System.out.println("Reproduciendo");
         AmountPlays += 1;
-        System.out.println("Cantidad de reproducciones: "+getAmountPlays());
     }
 
     //methods
     public void showData(){
-        System.out.println("hola");
+        System.out.println("Anio de lanzamiento: " + launchDate + "\n" +
+                "");
+        System.out.println("Total de reproducciones: " + getAmountPlays());
     }
 }
