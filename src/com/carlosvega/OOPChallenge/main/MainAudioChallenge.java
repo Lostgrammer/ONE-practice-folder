@@ -13,8 +13,9 @@ public class MainAudioChallenge {
         hoyEstoyRaro.setLaunchDate(2006);
         hoyEstoyRaro.setAlbum("Raro");
         hoyEstoyRaro.setRecords("Cuarteto de nos");
-        hoyEstoyRaro.play();
-        hoyEstoyRaro.play();
+        for (int i = 0; i < 50; i++) {
+            hoyEstoyRaro.liked();
+        }
         hoyEstoyRaro.showData();
 
         Podcast cotorrisa = new Podcast();

@@ -55,12 +55,10 @@ public class Audio {
                 "Cantidad de me gusta: " + getAmountLikes() + "\n");
     }
     public void liked(){
-        System.out.println("Marcado como me gusta");
         this.amountLikes++;
 
     }
     public void play(){
-        System.out.println("Reproduciendo");
         this.amountPlays++;
     }
 }
