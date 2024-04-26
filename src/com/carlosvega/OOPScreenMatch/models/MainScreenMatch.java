@@ -40,10 +40,12 @@ public class MainScreenMatch {
         System.out.println("Tiempo necesario para ver todo el contenido: " + timeCalculator.getTotalTime() + " min");
 
         //list
-        Title[] titlesList1 = new Title[5];
         List<Title> titlesList = new ArrayList<>();
         titlesList.add(peli1);
         titlesList.add(peli2);
         titlesList.add(serie1);
+        System.out.println("Cantidad de elementos de la lista de titulos: " + titlesList.size());
+        System.out.println("Nombre de peli 2: " + titlesList.get(1).getName());
+        System.out.println("Mostrar lista de objetos con un override del metodo toString: " + titlesList);
     }
 }

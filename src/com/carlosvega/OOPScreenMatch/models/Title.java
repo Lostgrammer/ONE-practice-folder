@@ -56,4 +56,10 @@ public class Title {
     public double calculateRatingMedia (){
         return (totalRating) / totalEvaluations;
     }
+
+    //sobreescribir metodo string
+    @Override
+    public String toString() {
+        return getName();
+    }
 }
