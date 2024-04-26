@@ -6,7 +6,8 @@ public class Audio {
     private int SecLenght;
     private String Autor;
     private int launchDate;
-    private int AmountPlays;
+    private int amountPlays;
+    private int amountLikes;
 
     public String getName() {
         return name;
@@ -27,10 +28,10 @@ public class Audio {
         Autor = autor;
     }
     public int getAmountPlays() {
-        return AmountPlays;
+        return amountPlays;
     }
     public void setAmountPlays(int amountPlays) {
-        AmountPlays = amountPlays;
+        this.amountPlays = amountPlays;
     }
     public int getLaunchDate() {
         return launchDate;
@@ -38,18 +39,28 @@ public class Audio {
     public void setLaunchDate(int launchDate) {
         this.launchDate = launchDate;
     }
-    public void liked(){
-        System.out.println("Marcado como me gusta");
+    public int getAmountLikes() {
+        return amountLikes;
     }
-    public void play(){
-        System.out.println("Reproduciendo");
-        AmountPlays += 1;
+    public void setAmountLikes(int amountLikes) {
+        this.amountLikes = amountLikes;
     }
 
     //methods
     public void showData(){
-        System.out.println("Anio de lanzamiento: " + launchDate + "\n" +
-                "");
-        System.out.println("Total de reproducciones: " + getAmountPlays());
+        System.out.println("Autor: " + getAutor() + " \n" +
+                "Duracion: "+ getSecLenght() + "s\n" +
+                "Fecha de lanzamiento: " + getLaunchDate() + " \n" +
+                "Total de reproducciones: " + getAmountPlays() + "\n" +
+                "Cantidad de me gusta: " + getAmountLikes() + "\n");
+    }
+    public void liked(){
+        System.out.println("Marcado como me gusta");
+        this.amountLikes++;
+
+    }
+    public void play(){
+        System.out.println("Reproduciendo");
+        this.amountPlays++;
     }
 }

@@ -21,8 +21,9 @@ public class Song extends Audio{
 
     @Override
     public void showData() {
-        System.out.println("Nombre de la cancion:" + getName() + "\n" +
-                "");
+        System.out.println("Nombre de la cancion: " + getName() + "\n" +
+                "Album: " + getAlbum() + "\n" +
+                "Disquera: " + getRecords());
         super.showData();
     }
 }

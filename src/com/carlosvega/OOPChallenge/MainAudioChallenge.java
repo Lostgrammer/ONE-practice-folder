@@ -21,6 +21,10 @@ public class MainAudioChallenge {
         cotorrisa.setLaunchDate(2019);
         cotorrisa.setNumberEpisdodes(243);
 
+        cotorrisa.play();
+        cotorrisa.liked();
+        cotorrisa.showData();
+
 
 
     }
