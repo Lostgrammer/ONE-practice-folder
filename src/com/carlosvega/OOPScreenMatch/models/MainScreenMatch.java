@@ -3,6 +3,10 @@ package com.carlosvega.OOPScreenMatch.models;
 
 import com.carlosvega.OOPScreenMatch.calculations.TimeCalculator;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class MainScreenMatch {
     public static void main(String[] args) {
 
@@ -12,9 +16,6 @@ public class MainScreenMatch {
         peli1.setMinutesLenght(120);
         peli1.setDirector("Rupert Wyatt");
         peli1.showData();
-//        peli1.rate(5.7);
-//        peli1.rate(10);
-//        System.out.println("La media de la pelicula " + peli1.name + " es: " + peli1.calculateRatingMedia() + " /10\n");
 
         Serie serie1 = new Serie();
         serie1.setName("Breaking Bad");
@@ -37,5 +38,12 @@ public class MainScreenMatch {
         timeCalculator.include(serie1);
 
         System.out.println("Tiempo necesario para ver todo el contenido: " + timeCalculator.getTotalTime() + " min");
+
+        //list
+        Title[] titlesList1 = new Title[5];
+        List<Title> titlesList = new ArrayList<>();
+        titlesList.add(peli1);
+        titlesList.add(peli2);
+        titlesList.add(serie1);
     }
 }
