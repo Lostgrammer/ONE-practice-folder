@@ -1,4 +1,4 @@
-package com.carlosvega.OOPChallenge;
+package com.carlosvega.OOPChallenge.models;
 /*
 * Aplicacion de reproduccion de audio*/
 public class Audio {

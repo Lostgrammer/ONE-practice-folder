@@ -1,4 +1,4 @@
-package com.carlosvega.OOPChallenge;
+package com.carlosvega.OOPChallenge.models;
 
 public class Song extends Audio{
     private String album;

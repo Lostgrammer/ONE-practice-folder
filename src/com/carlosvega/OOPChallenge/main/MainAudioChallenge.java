@@ -1,4 +1,7 @@
-package com.carlosvega.OOPChallenge;
+package com.carlosvega.OOPChallenge.main;
+
+import com.carlosvega.OOPChallenge.models.Podcast;
+import com.carlosvega.OOPChallenge.models.Song;
 
 public class MainAudioChallenge {
     public static void main(String[] args) {
