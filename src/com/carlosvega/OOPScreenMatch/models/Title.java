@@ -11,6 +11,11 @@ public class Title {
     private int totalEvaluations;
     private int minutesLenght;
 
+    //constructor
+    public Title(String name, int launchYear){
+        this.name = name;
+        this.launchYear = launchYear;
+    }
     //getters y setters
     public double getTotalRating() {
         return totalRating;

@@ -7,6 +7,11 @@ public class Movie extends Title implements Ranking {
     //atributos
     private String director;
 
+    //constructor
+    public Movie(String name, int launchYear) {
+        super(name, launchYear);
+    }
+
     //getters y setters
     public String getDirector() {
         return director;
