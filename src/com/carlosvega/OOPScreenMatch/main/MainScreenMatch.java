@@ -1,10 +1,13 @@
-package com.carlosvega.OOPScreenMatch.models;
+package com.carlosvega.OOPScreenMatch.main;
 
 
 //import com.carlosvega.OOPScreenMatch.calculations.TimeCalculator;
 
+import com.carlosvega.OOPScreenMatch.models.Movie;
+import com.carlosvega.OOPScreenMatch.models.Serie;
+import com.carlosvega.OOPScreenMatch.models.Title;
+
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class MainScreenMatch {
