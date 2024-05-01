@@ -5,6 +5,8 @@ import com.carlosvega.OOPScreenMatch.models.Serie;
 import com.carlosvega.OOPScreenMatch.models.Title;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class MainList {
@@ -20,9 +22,17 @@ public class MainList {
         titleList.add(peli2);
         titleList.add(serie1);
 
+        //new list of name field of title object
+        List<String> nameTitleList = new ArrayList<>();
         for(Title i:titleList){
             i.showData();
+            String item = i.getName();
+            nameTitleList.add(item);
         }
+
+        //sort list of titles names
+        Collections.sort(nameTitleList);
+        System.out.println(nameTitleList);
     }
 
 
