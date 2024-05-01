@@ -20,6 +20,9 @@ public class MainScreenMatch {
         peli1.setDirector("Rupert Wyatt");
         peli1.showData();
 
+        //segunda referencia al mismo objeto
+        Movie referencePeli1 = peli1;
+
         Serie serie1 = new Serie("Breaking Bad",2008);
 //        serie1.setName();
 //        serie1.setLaunchYear();
