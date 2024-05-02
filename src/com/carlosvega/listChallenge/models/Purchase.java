@@ -1,4 +1,4 @@
-package com.carlosvega.models;
+package com.carlosvega.listChallenge.models;
 
 public class Purchase {
     private String description;
