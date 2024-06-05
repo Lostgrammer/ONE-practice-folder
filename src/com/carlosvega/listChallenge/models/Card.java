@@ -1,12 +1,12 @@
 package com.carlosvega.listChallenge.models;
 
 public class Card {
-    private double limit;
+    private double balance;
 
-    public double getLimit() {
-        return limit;
+    public double getBalance() {
+        return balance;
     }
-    public void setLimit(double limit) {
-        this.limit = limit;
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 }
