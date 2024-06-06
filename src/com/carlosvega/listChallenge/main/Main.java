@@ -17,7 +17,11 @@ public class Main {
         String temporalDescription = "";
         String response = "";
         List<Purchase> purchaseList = new ArrayList<>();
+        //lista ordenanda
+        List<Purchase> sortPurchaseList = new ArrayList<>();
         double remainingBalance;
+        //menor value
+        double lesserValuePurchaseItem;
 
         //print welcome
         System.out.println("Bienvenido a la tienda");
@@ -44,13 +48,32 @@ public class Main {
 
             purchaseList.add(new Purchase(temporalDescription, temporalValue));
 
-            //if si desea seguir comprando
+            //condicional seguir comprando
             System.out.println("Desea seguir comprando? Envie 'si' para continuar o 'no para finalizar la compra'");
             response = input.nextLine().toLowerCase();
             if (response.equals("no")) {
                 //boleta
                 System.out.println("*************************** " +
-                        "\nCOMPRAS REALIZADAS");
+                        "\nCOMPRAS REALIZADAS" +
+                        "\n");
+
+
+                //ordenar en forma ascendente
+//                for (int i = 0; i < purchaseList.size(); i++) {
+//                    for (int j = 1; j < purchaseList.size(); j++) {
+//                        if (purchaseList.get(i).getValue() > purchaseList.get(j).getValue()){
+//                            lesserValuePurchaseItem = purchaseList.get(j).getValue();
+//                        }else if(purchaseList.get(i).getValue() < purchaseList.get(j).getValue()){
+//                            lesserValuePurchaseItem = purchaseList.get(i).getValue();
+//                        }
+//                        System.out.println(purchaseList.get(i).getDescription());
+//                    }
+//                }
+                for (int i = 0; i < purchaseList.size(); i++) {
+                    if (purchaseList.get(i).getValue()
+                }
+
+
                 for(Purchase item : purchaseList){
                     System.out.println(item.getDescription() + " - " + item.getValue());
                 }
