@@ -9,44 +9,44 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
         //variables
         Scanner input = new Scanner(System.in);
-        Card myCard = new Card();
-        double accumulatedValue = 0;
-        double temporalValue = 0;
-        String temporalDescription = "";
-        String response = "";
+
+        double accumulatedValue = 0; //purchase
+        double productValue = 0; //purchase
+        String temporalDescription = ""; //purchase
+        String response = ""; //purchase
         List<Purchase> purchaseList = new ArrayList<>();
         //lista ordenanda
         List<Purchase> sortPurchaseList = new ArrayList<>();
-        double remainingBalance;
         //menor value
         double lesserValuePurchaseItem;
 
         //print welcome
         System.out.println("Bienvenido a la tienda");
         System.out.println("Ingrese el monto de su tarjeta por seguridad");
-        myCard.setBalance(input.nextDouble());
+        Card myCard = new Card(input.nextDouble());
         input.nextLine();
-        remainingBalance = myCard.getBalance();
 
         while (myCard.getBalance() >= accumulatedValue){
             System.out.println("Ingrese la descripcion del producto:");
             temporalDescription = input.nextLine();
             System.out.println("Ingrese el precio del producto");
-            temporalValue = input.nextDouble();
+            productValue = input.nextDouble();
             input.nextLine();
 
             //verifying temporalValue
-            if (myCard.getBalance() < temporalValue) {
+            if (myCard.getBalance() < productValue) {
                 System.out.println("Saldo insuficiente, no se pudo realizar la compra");
                 break;
             }
-            //updating card amount
-            accumulatedValue += temporalValue;
-            remainingBalance -= temporalValue;
 
-            purchaseList.add(new Purchase(temporalDescription, temporalValue));
+            //updating card balance
+            accumulatedValue += productValue;
+            myCard.setBalance(productValue); //ingresar el valor como parametro que se restara a la tarjeta para determinar su nuevo valor
+
+            purchaseList.add(new Purchase(temporalDescription, productValue));
 
             //condicional seguir comprando
             System.out.println("Desea seguir comprando? Envie 'si' para continuar o 'no para finalizar la compra'");
@@ -69,16 +69,16 @@ public class Main {
 //                        System.out.println(purchaseList.get(i).getDescription());
 //                    }
 //                }
-                for (int i = 0; i < purchaseList.size(); i++) {
-                    if (purchaseList.get(i).getValue()
-                }
+//                for (int i = 0; i < purchaseList.size(); i++) {
+//                    if (purchaseList.get(i).getValue()
+//                }
 
 
                 for(Purchase item : purchaseList){
                     System.out.println(item.getDescription() + " - " + item.getValue());
                 }
                 System.out.println("***************************");
-                System.out.println("Saldo de la tarjeta: " + remainingBalance);
+                System.out.println("Saldo de la tarjeta: " + myCard.getBalance());
                 break;
             }else {
                 //verificar si el acumulado es mayor que el saldo
@@ -91,7 +91,7 @@ public class Main {
                         System.out.println(item.getDescription() + " - " + item.getValue());
                     }
                     System.out.println("***************************");
-                    System.out.println("Saldo de la tarjeta: " + remainingBalance);
+                    System.out.println("Saldo de la tarjeta: " + myCard.getBalance());
                 }
             }
         }
