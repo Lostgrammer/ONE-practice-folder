@@ -20,10 +20,20 @@ public class Card {
         this.balance = this.balance - productValue;
         System.out.println(balance);
     }
+    public List<Purchase> getPurchaseList() {
+        return purchaseList;
+    }
 
     //metodos
     public List<Purchase> addPurchase(Purchase purchase){
-        purchaseList.add(purchase);
+        this.purchaseList.add(purchase);
         return purchaseList;
     }
+    //metodo para ordenar lista
+    public void showSortList(){
+        for(Purchase item : getPurchaseList()){
+            System.out.println(item.getDescription() + " - " + item.getValue());
+        }
+    }
+
 }

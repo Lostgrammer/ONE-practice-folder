@@ -14,4 +14,14 @@ public class Purchase {
     public double getValue() {
         return value;
     }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    public void setValue(double value) {
+        this.value = value;
+    }
+
+    //methods
+
 }

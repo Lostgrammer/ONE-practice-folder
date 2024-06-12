@@ -12,16 +12,10 @@ public class Main {
 
         //variables
         Scanner input = new Scanner(System.in);
-
-        double accumulatedValue = 0; //purchase
-        double productValue = 0; //purchase
-        String temporalDescription = ""; //purchase
-        String response = ""; //purchase
-        List<Purchase> purchaseList = new ArrayList<>();
-        //lista ordenanda
-        List<Purchase> sortPurchaseList = new ArrayList<>();
-        //menor value
-        double lesserValuePurchaseItem;
+        double accumulatedValue = 0;
+        double productValue = 0;
+        String temporalDescription = "";
+        String response = "";
 
         //print welcome
         System.out.println("Bienvenido a la tienda");
@@ -36,7 +30,6 @@ public class Main {
             System.out.println("Ingrese el precio del producto");
             productValue = input.nextDouble();
             input.nextLine();
-
 
             //verifying temporalValue
             if (myCard.getBalance() < productValue) {
@@ -55,13 +48,29 @@ public class Main {
             System.out.println("Desea seguir comprando? Envie 'si' para continuar o 'no para finalizar la compra'");
             response = input.nextLine().toLowerCase();
             if (response.equals("no")) {
-                //boleta
-                System.out.println("*************************** " +
-                        "\nCOMPRAS REALIZADAS" +
-                        "\n");
+                break;
+            }else {
+                //verificar si el acumulado es mayor que el saldo
+                if (accumulatedValue >= myCard.getBalance()){
+                    System.out.println("Lo sentimos, no cuenta con saldo suficiente para seguir comprando, le entregamos su boleta");
+                    break;
+                }
+            }
+        }
+        //if para comprobar que se hizo al menos una compra
+        if (myCard.getPurchaseList().size() > 0){
+
+            //imprimir boleta
+            System.out.println("***************************" +
+                    "\nCOMPRAS REALIZADAS");
+            //hacerla en la clase tarjeta
+            myCard.showList();
+            System.out.println("*************************** \n" +
+                    "Saldo de la tarjeta: " + myCard.getBalance());
 
 
-                //ordenar en forma ascendente
+            //metodo para ordenar en forma ascendente
+
 //                for (int i = 0; i < purchaseList.size(); i++) {
 //                    for (int j = 1; j < purchaseList.size(); j++) {
 //                        if (purchaseList.get(i).getValue() > purchaseList.get(j).getValue()){
@@ -75,28 +84,6 @@ public class Main {
 //                for (int i = 0; i < purchaseList.size(); i++) {
 //                    if (purchaseList.get(i).getValue()
 //                }
-
-
-                for(Purchase item : purchaseList){
-                    System.out.println(item.getDescription() + " - " + item.getValue());
-                }
-                System.out.println("***************************");
-                System.out.println("Saldo de la tarjeta: " + myCard.getBalance());
-                break;
-            }else {
-                //verificar si el acumulado es mayor que el saldo
-                if (accumulatedValue >= myCard.getBalance()){
-                    System.out.println("Lo sentimos, no cuenta con saldo suficiente para seguir comprando, le entregamos su boleta");
-                    //boleta
-                    System.out.println("***************************" +
-                            "\nCOMPRAS REALIZADAS");
-                    for(Purchase item : purchaseList){
-                        System.out.println(item.getDescription() + " - " + item.getValue());
-                    }
-                    System.out.println("***************************");
-                    System.out.println("Saldo de la tarjeta: " + myCard.getBalance());
-                }
-            }
         }
 
     }
