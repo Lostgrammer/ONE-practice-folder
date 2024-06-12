@@ -29,12 +29,14 @@ public class Main {
         Card myCard = new Card(input.nextDouble());
         input.nextLine();
 
+        //condicion para que se realice el proceso
         while (myCard.getBalance() >= accumulatedValue){
             System.out.println("Ingrese la descripcion del producto:");
             temporalDescription = input.nextLine();
             System.out.println("Ingrese el precio del producto");
             productValue = input.nextDouble();
             input.nextLine();
+
 
             //verifying temporalValue
             if (myCard.getBalance() < productValue) {
@@ -46,7 +48,8 @@ public class Main {
             accumulatedValue += productValue;
             myCard.setBalance(productValue); //ingresar el valor como parametro que se restara a la tarjeta para determinar su nuevo valor
 
-            purchaseList.add(new Purchase(temporalDescription, productValue));
+            //generar la lista dentro de la  clase Card
+            System.out.println(myCard.addPurchase(new Purchase(temporalDescription, productValue)));
 
             //condicional seguir comprando
             System.out.println("Desea seguir comprando? Envie 'si' para continuar o 'no para finalizar la compra'");
