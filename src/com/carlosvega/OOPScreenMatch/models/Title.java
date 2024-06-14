@@ -1,9 +1,14 @@
 package com.carlosvega.OOPScreenMatch.models;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Title {
 
     //atributos
+
+    @SerializedName("Title")//anotacion gson para deserealizar titulo
     private String name;
+    @SerializedName("Year")//anotacion gson para deserealizar anio
     private int launchYear;
     private boolean planIncluded;
 
@@ -62,9 +67,9 @@ public class Title {
         return (totalRating) / totalEvaluations;
     }
 
-    //sobreescribir metodo string
     @Override
     public String toString() {
-        return getName();
+        return "name='" + name + '\'' +
+                ", launchYear=" + launchYear;
     }
 }

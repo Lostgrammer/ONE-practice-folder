@@ -1,5 +1,8 @@
 package com.carlosvega.OOPScreenMatch.main;
 
+import com.carlosvega.OOPScreenMatch.models.Title;
+import com.google.gson.Gson;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -14,6 +17,7 @@ public class MainAPI {
         Scanner input = new Scanner(System.in);
         System.out.println("Introduzca el titulo de la pelicula que quiere encontrar");
         titulo = input.nextLine();
+
         String url = "https://www.omdbapi.com/?t=" + titulo + "&apikey=214a8fd4";
         //cliente
         HttpClient client = HttpClient.newHttpClient();
@@ -24,7 +28,12 @@ public class MainAPI {
         //http response
         HttpResponse<String> response = client
                 .send(request, HttpResponse.BodyHandlers.ofString());
-        System.out.println(response.body());
+        String json = (response.body());
+        System.out.println(json);
+        //deseralizacion
+        Gson gson = new Gson(); //creamos objeto Gson
+        Title titulo1 = gson.fromJson(json, Title.class);;
+        System.out.println(titulo1);
 
     }
 }
