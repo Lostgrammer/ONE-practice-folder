@@ -64,7 +64,7 @@ public class Main {
             System.out.println("***************************" +
                     "\nCOMPRAS REALIZADAS");
             //hacerla en la clase tarjeta
-            myCard.showList();
+            //myCard.showList();
             System.out.println("*************************** \n" +
                     "Saldo de la tarjeta: " + myCard.getBalance());
 
