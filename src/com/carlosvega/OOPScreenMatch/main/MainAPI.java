@@ -43,6 +43,7 @@ public class MainAPI {
 
         //llevar informacion de TitleOmdb a Title
         Title titulo1 = new Title(tituloOmdb);
+        System.out.println(titulo1);
 
     }
 }

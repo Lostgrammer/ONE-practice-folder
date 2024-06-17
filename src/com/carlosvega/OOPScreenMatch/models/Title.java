@@ -21,11 +21,12 @@ public class Title {
         this.name = name;
         this.launchYear = launchYear;
     }
+
     //nuevo constructor para TitleOmdb
     public Title(TitleOmdb titleOmdb){
         this.name = titleOmdb.title();
-        this.launchYear = titleOmdb.year();
-
+        this.launchYear = Integer.valueOf(titleOmdb.year());
+        this.minutesLenght = Integer.valueOf(titleOmdb.runtime().substring(0,2)); //substring para tranformar parte del string a int
     }
     //getters y setters
     public double getTotalRating() {
@@ -75,7 +76,8 @@ public class Title {
 
     @Override
     public String toString() {
-        return "name='" + name + '\'' +
-                ", launchYear=" + launchYear;
+        return "nombre='" + name + '\'' +
+                ", fecha de lanzamiento=" + launchYear +
+                "\n , duracion: " + minutesLenght;
     }
 }
