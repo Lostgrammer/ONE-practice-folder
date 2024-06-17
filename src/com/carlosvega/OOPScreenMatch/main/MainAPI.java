@@ -36,7 +36,7 @@ public class MainAPI {
         //deseralizacion
         Gson gson = new GsonBuilder()
                 .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
-                .create();//modificamos el objeto gson para que acepte minusculas como parametro en una clase
+                .create();//modificamos el objeto gson para que acepte minusculas como parametro en TitleOmdb
 
         TitleOmdb tituloOmdb = gson.fromJson(json, TitleOmdb.class);
         System.out.println(tituloOmdb);
