@@ -1,7 +1,10 @@
 package com.carlosvega.OOPScreenMatch.main;
 
 import com.carlosvega.OOPScreenMatch.models.Title;
+import com.carlosvega.OOPScreenMatch.models.TitleOmdb;
+import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.io.IOException;
 import java.net.URI;
@@ -29,11 +32,17 @@ public class MainAPI {
         HttpResponse<String> response = client
                 .send(request, HttpResponse.BodyHandlers.ofString());
         String json = (response.body());
-        System.out.println(json);
+        System.out.println(json + "\n");
         //deseralizacion
-        Gson gson = new Gson(); //creamos objeto Gson
-        Title titulo1 = gson.fromJson(json, Title.class);;
-        System.out.println(titulo1);
+        Gson gson = new GsonBuilder()
+                .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
+                .create();//modificamos el objeto gson para que acepte minusculas como parametro en una clase
+
+        TitleOmdb tituloOmdb = gson.fromJson(json, TitleOmdb.class);
+        System.out.println(tituloOmdb);
+
+        //llevar informacion de TitleOmdb a Title
+        Title titulo1 = new Title(tituloOmdb);
 
     }
 }

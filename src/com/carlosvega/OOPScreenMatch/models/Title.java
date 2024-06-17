@@ -21,6 +21,12 @@ public class Title {
         this.name = name;
         this.launchYear = launchYear;
     }
+    //nuevo constructor para TitleOmdb
+    public Title(TitleOmdb titleOmdb){
+        this.name = titleOmdb.title();
+        this.launchYear = titleOmdb.year();
+
+    }
     //getters y setters
     public double getTotalRating() {
         return totalRating;
