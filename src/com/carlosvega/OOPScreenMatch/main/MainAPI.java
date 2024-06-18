@@ -41,9 +41,16 @@ public class MainAPI {
         TitleOmdb tituloOmdb = gson.fromJson(json, TitleOmdb.class);
         System.out.println(tituloOmdb);
 
-        //llevar informacion de TitleOmdb a Title
-        Title titulo1 = new Title(tituloOmdb);
-        System.out.println(titulo1);
+        //uso de try catch para identificar el error
+        try{
+            Title titulo1 = new Title(tituloOmdb);
+            System.out.println(titulo1);
+        }catch (NumberFormatException e){
+            System.out.println("OCURRIO UN ERROR: \n" + e);
+        }finally {
+            System.out.println("Finalizo la ejecucucion de API");
+        }
+
 
     }
 }
