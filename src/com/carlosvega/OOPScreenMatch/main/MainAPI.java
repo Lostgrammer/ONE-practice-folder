@@ -31,7 +31,7 @@ public class MainAPI {
         //http response
         HttpResponse<String> response = client
                 .send(request, HttpResponse.BodyHandlers.ofString());
-        String json = (response.body());
+        String json = (response.body());//string json
         System.out.println(json + "\n");
         //deseralizacion
         Gson gson = new GsonBuilder()
