@@ -6,6 +6,7 @@ import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -49,15 +50,16 @@ public class MainAPI {
             HttpResponse<String> response = client
                     .send(request, HttpResponse.BodyHandlers.ofString());
             String json = (response.body());//string json
+            //mostrando el jsond e la api
             System.out.println(json + "\n");
-            //deseralizacion
+            //objeto gson para deserealizar
             Gson gson = new GsonBuilder()
                     .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
                     .create();//modificamos el objeto gson para que acepte minusculas como parametro en TitleOmdb
-
+            //deserializando
             TitleOmdb tituloOmdb = gson.fromJson(json, TitleOmdb.class);
-            System.out.println(tituloOmdb);
-
+            System.out.println(tituloOmdb);//mostrando desde el record
+            //ingresando como parametro el record tituloOmdb para el objeto de clase Title
             Title titulo1 = new Title(tituloOmdb);
             System.out.println(titulo1);
         }catch (NumberFormatException e){
@@ -68,7 +70,6 @@ public class MainAPI {
         finally {
             System.out.println("Finalizo la ejecucucion de API");
         }
-
-
+        
     }
 }
