@@ -80,6 +80,6 @@ public class Title {
     public String toString() {
         return "nombre='" + name + '\'' +
                 ", fecha de lanzamiento=" + launchYear +
-                "\n , duracion: " + minutesLenght;
+                ", duracion: " + minutesLenght;
     }
 }
