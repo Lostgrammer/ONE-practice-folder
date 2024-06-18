@@ -25,16 +25,16 @@ public class MainAPI {
         System.out.println("Introduzca el titulo de la pelicula que quiere encontrar");
         titulo = input.nextLine();
 
-//        //string to array
-//        char[] charArrayTitulo = titulo.toCharArray();
-//        for (Character i : charArrayTitulo){
-//            if (i.equals(' ')){
-//                i = '+';
-//            }
-//            stringBuilder.append(i);
-//        }
-//        //array to String
-//        titulo = stringBuilder.toString();
+        //string to array
+        char[] charArrayTitulo = titulo.toCharArray();
+        for (Character i : charArrayTitulo){
+            if (i.equals(' ')){
+                i = '+';
+            }
+            stringBuilder.append(i);
+        }
+        //array to String
+        titulo = stringBuilder.toString();
 
         //colocar try hasta aca por las dependencias de cada objeto variable
         try{
