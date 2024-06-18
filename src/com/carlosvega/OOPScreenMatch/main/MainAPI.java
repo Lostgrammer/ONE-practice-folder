@@ -62,6 +62,11 @@ public class MainAPI {
             //ingresando como parametro el record tituloOmdb para el objeto de clase Title
             Title titulo1 = new Title(tituloOmdb);
             System.out.println(titulo1);
+
+            //creating file
+            FileWriter writer = new FileWriter("movies.txt");
+            writer.write(titulo1.toString());
+            writer.close();
         }catch (NumberFormatException e){
             System.out.println("OCURRIO UN ERROR: \n" + e);
         }catch (IllegalArgumentException e){
@@ -70,6 +75,6 @@ public class MainAPI {
         finally {
             System.out.println("Finalizo la ejecucucion de API");
         }
-        
+
     }
 }
