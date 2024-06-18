@@ -26,7 +26,9 @@ public class Title {
     public Title(TitleOmdb titleOmdb){
         this.name = titleOmdb.title();
         this.launchYear = Integer.valueOf(titleOmdb.year());
-        this.minutesLenght = Integer.valueOf(titleOmdb.runtime().substring(0,3)); //substring para tranformar parte del string a int
+        this.minutesLenght = Integer.valueOf(titleOmdb.runtime()
+                .substring(0,3) //substring para tranformar parte del string a int
+                .replace(" ","")); //metodo para reemplazar valores de un string
     }
     //getters y setters
     public double getTotalRating() {
