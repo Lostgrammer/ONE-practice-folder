@@ -6,9 +6,7 @@ public class Title {
 
     //atributos
 
-    @SerializedName("Title")//anotacion gson para deserealizar titulo
     private String name;
-    @SerializedName("Year")//anotacion gson para deserealizar anio
     private int launchYear;
     private boolean planIncluded;
 
