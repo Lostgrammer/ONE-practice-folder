@@ -76,8 +76,8 @@ public class Title {
 
     @Override
     public String toString() {
-        return "nombre='" + name + '\'' +
+        return "(nombre='" + name +
                 ", fecha de lanzamiento=" + launchYear +
-                ", duracion: " + minutesLenght;
+                ", duracion: " + minutesLenght + ")\n";
     }
 }
