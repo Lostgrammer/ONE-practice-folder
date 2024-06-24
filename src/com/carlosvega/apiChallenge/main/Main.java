@@ -1,5 +1,9 @@
 package com.carlosvega.apiChallenge.main;
 
+import com.carlosvega.apiChallenge.models.Character;
+import com.carlosvega.apiChallenge.models.CharacterApi;
+import com.google.gson.Gson;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -23,6 +27,11 @@ public class Main {
                 .send(request, HttpResponse.BodyHandlers.ofString());
 
         String json = (response.body());
-        //gson
+        System.out.println(json);
+        Gson gson = new Gson();
+        CharacterApi characterApi = gson.fromJson(json, CharacterApi.class);
+        System.out.println(characterApi.toString());
+        Character character = new Character(characterApi);
+        System.out.println(character);
     }
 }
