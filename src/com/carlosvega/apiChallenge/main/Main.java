@@ -2,8 +2,11 @@ package com.carlosvega.apiChallenge.main;
 
 import com.carlosvega.apiChallenge.models.Character;
 import com.carlosvega.apiChallenge.models.CharacterApi;
+import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -19,6 +22,10 @@ public class Main {
         String id;
         String responseUser = "";
         List <Character> characterList = new ArrayList<>();
+        Gson gson = new GsonBuilder()
+                .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
+                .setPrettyPrinting()
+                .create();
         try {
             while (!responseUser.equalsIgnoreCase("salir")){
                 System.out.println("Introduzca el id del personaje que quiere ver");
@@ -34,7 +41,7 @@ public class Main {
 
                 String json = (response.body());
                 System.out.println(json);
-                Gson gson = new Gson();
+
                 CharacterApi characterApi = gson.fromJson(json, CharacterApi.class);
                 System.out.println(characterApi.toString());
                 Character character = new Character(characterApi);
@@ -50,12 +57,9 @@ public class Main {
             System.out.println("Ocurrio el siguiente error" + e);
         }
         //document
-        System.out.println("Aqui la lista de personajes guardados");
-        for (Character i : characterList){
-            System.out.println(i);
-        }
-
-
-
+        System.out.println("Generando archivo de personajes . . .");
+        FileWriter writer = new FileWriter("rickMortyCharacters.json");
+        writer.write(gson.toJson(characterList));
+        writer.close();
     }
 }
