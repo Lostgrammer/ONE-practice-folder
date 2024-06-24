@@ -11,7 +11,7 @@ public class Character {
         this.id = Integer.valueOf(characterApi.id());
         this.name = characterApi.name();
         this.species = characterApi.species();
-        this.locationName = characterApi.origin();
+        this.locationName = String.valueOf(characterApi.origin().name());
     }
     @Override
     public String toString() {
