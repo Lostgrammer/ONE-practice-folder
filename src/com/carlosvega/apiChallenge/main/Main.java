@@ -2,7 +2,6 @@ package com.carlosvega.apiChallenge.main;
 
 import com.carlosvega.apiChallenge.models.Character;
 import com.carlosvega.apiChallenge.models.CharacterApi;
-import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
