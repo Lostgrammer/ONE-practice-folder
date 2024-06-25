@@ -1,9 +1,16 @@
 package com.carlosvega.OOPScreenMatch.models;
 
 
-public class Movie extends Titulo{
+import com.carlosvega.OOPScreenMatch.calculations.Ranking;
+
+public class Movie extends Title implements Ranking {
     //atributos
     private String director;
+
+    //constructor
+    public Movie(String name, int launchYear) {
+        super(name, launchYear);
+    }
 
     //getters y setters
     public String getDirector() {
@@ -13,7 +20,16 @@ public class Movie extends Titulo{
         this.director = director;
     }
 
+    @Override
+    public int getRamking() {
+        return (int) calculateRatingMedia();
+    }
+
     //metodos
-
-
+//    @Override
+//    public void showData() {
+//        System.out.println("Nombre de la pelicula: " + getName() + "\n" +
+//                "Año de lanzamiento: " + getLaunchYear() + "\n" +
+//                "Director: " + director + "\n");
+//    }
 }
