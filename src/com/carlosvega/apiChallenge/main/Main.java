@@ -21,15 +21,14 @@ public class Main {
         Scanner input = new Scanner(System.in);
         String id;
         String responseUser = "";
-        List <Character> characterList = new ArrayList<>();
+        List<Character> characterList = new ArrayList<>();
         Gson gson = new GsonBuilder()
-                .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
                 .setPrettyPrinting()
                 .create();
-        try {
-            while (!responseUser.equalsIgnoreCase("salir")){
-                System.out.println("Introduzca el id del personaje que quiere ver");
-                id = input.nextLine();
+        while (!responseUser.equalsIgnoreCase("salir")) {
+            System.out.println("Introduzca el id del personaje que quiere ver");
+            id = input.nextLine();
+            try {
                 String url = "https://rickandmortyapi.com/api/character/" + id;
 
                 HttpClient client = HttpClient.newHttpClient();
@@ -42,24 +41,28 @@ public class Main {
                 String json = (response.body());
                 System.out.println(json);
 
-                CharacterApi characterApi = gson.fromJson(json, CharacterApi.class);
-                System.out.println(characterApi.toString());
-                Character character = new Character(characterApi);
+                CharacterApi personajeApi = gson.fromJson(json,CharacterApi.class);
+                System.out.println(personajeApi);
+                Character character = new Character(personajeApi);
                 characterList.add(character);
                 //System.out.println(character);
 
                 System.out.println("Desea ingresa otro personaje? \n" +
-                        "Para continuar pulse enter \n" +
-                        "Para terminar el programa envie 'salir'");
+                        "   Para continuar pulse enter \n" +
+                        "   Para terminar el programa envie 'salir'");
                 responseUser = input.nextLine();
+
+            }catch (NumberFormatException e){
+                System.out.println("Se produjo la excepcion de NumberFormat: " + e);
+            }catch (Exception e) {
+                System.out.println("Ocurrio el siguiente error" + e);
             }
-        }catch (Exception e){
-            System.out.println("Ocurrio el siguiente error" + e);
         }
         //document
         System.out.println("Generando archivo de personajes . . .");
         FileWriter writer = new FileWriter("rickMortyCharacters.json");
         writer.write(gson.toJson(characterList));
         writer.close();
+
     }
 }
